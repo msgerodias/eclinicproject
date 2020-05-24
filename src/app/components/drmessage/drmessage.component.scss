@@ -1,0 +1,59 @@
+.side-nav{
+    position: absolute;
+    left:0;
+    margin-top:1%;
+    width:14%;
+}
+.msg-content{
+    position: absolute;
+    margin-top:1%;
+    margin-right: 1%;
+    width:80%;
+    right:0;
+}
+
+.button {
+    background:white;
+    display: inline-flex;
+    height: 50px;
+    width: 200px;
+    margin: 20px 20px 20px 20px;
+    color:black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+      -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+      -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  }
+  
+  a {
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+  
+  /* First Button */
+  
+  #arrow-hover {
+    width: 15px;
+    height: 10px;
+    position: absolute;
+    transform: translateX(60px);
+    opacity: 0;
+    -webkit-transition: all .25s cubic-bezier(.14, .59, 1, 1.01);
+    transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
+    margin: 0;
+    padding: 0 5px;
+  }
+  
+  a#button-1:hover img {
+    background: black;
+    width: 15px;
+    opacity: 1;
+    transform: translateX(80px);
+  }
+  
