@@ -1,0 +1,86 @@
+<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+<div class="toolbar" role="banner">
+  <img
+    width="250"
+    alt="Angular Logo"
+    src="./assets/img/logo.png"
+  />
+    <div class="spacer">
+      <a routerLink="/doctor/booking" routerLinkActive="active" class="pt-features">ABOUT</a>
+      <a routerLink="/doctor/consultation" routerLinkActive="active" class="pt-features">SERVICES</a>
+      <a routerLink="/doctor/message" routerLinkActive="active" class="pt-features">DOCTORS</a>
+      <a routerLink="/doctor/record" routerLinkActive="active" class="pt-features">CONTACT</a>
+    </div>
+    <div class="login">
+      <form>
+            <label>Username <input type="text" name="field1" class="login-inp"/></label>
+            <label>Password <input type="password" name="field5" class="login-inp"/></label>
+          <!--
+            <input type="submit" name="Sign Up" class="login-button" value="LOGIN"/>
+          -->
+          <a routerLink="/doctor" routerLinkActive="active">LOGIN</a>
+      </form>
+    </div>
+</div>
+<div class="signup__container">
+    <div class="signup__thumbnail">
+      <div class="form-style-10">
+        <h1>Sign Up Now!</h1>
+        <!--REGISTRATION FORM-->
+        <form>
+            <div class="inner-wrap">
+              <label>
+                Your Full Name 
+                  <input  type="text" 
+                          required
+                          [(ngModel)]="regForm.fullName"
+                          name="fullName"/>
+              </label>
+              <label>
+                Address 
+                  <textarea 
+                          required
+                          [(ngModel)]="regForm.pAddress"
+                          name="pAddress">
+                  </textarea>
+              </label>
+              <label>
+                Phone Number
+                  <input  type="text"
+                          required
+                          [(ngModel)]="regForm.pContact"
+                          name="pContact"/>
+              </label>
+              <label>
+                Email Address
+                  <input  type="email"
+                          required
+                          [(ngModel)]="regForm.pEadd"
+                          name="pEadd"/>
+              </label>
+              <label>
+                Password 
+                  <input  type="password"
+                          required
+                          [(ngModel)]="regForm.pPassword"
+                          name="pPassword"/>
+              </label>
+              <label>
+                Confirm Password
+                  <input  type="password"
+                          required
+                          [(ngModel)]="regForm.pConfirm"
+                          name="pConfirm"/>
+              </label>
+            </div>
+            <div class="button-section">
+              <button type="submit" (click)="regUser()">Sign Up</button>
+              <span class="privacy-policy">
+                  <input type="checkbox" name="field7">You agree to our Terms and Policy. 
+              </span>
+            </div>
+        </form>
+      </div>
+    </div>  
+</div>
+  
