@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-const clinicDB = 'http://localhost:8080/clinic';
+const clinicDB = 'http://127.0.0.1:8000';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EcservicesService {
-
+  httpHeaders = new HttpHeaders({'Content-type': 'application/json'});
   constructor(private http: HttpClient) { }
 
   login(data){
@@ -22,8 +23,9 @@ export class EcservicesService {
 //------------------ PATIENT --------------------//
 
   //Patient book a consultation
-  ptBookConsultation(data){
-    return this.http.post(clinicDB,data);
+  ptBookConsultation(booking){
+    const book = {did: booking.did, pid:booking.pid, complaints:booking.complaints, remarks:booking.remarks}
+    return this.http.post(clinicDB + '/booking/', booking, {headers:this.httpHeaders});
   }
 
   //Patient create new message
@@ -71,16 +73,23 @@ export class EcservicesService {
     return this.http.put(`${clinicDB}/${id}`, data);
   }
 
+  //------------------ OTHER FUNCTIONS --------------------//
+
+  //Doctor open booking page
+  getDoctorsList(): Observable<any>{
+    return this.http.get(clinicDB + '/doctor/', {headers:this.httpHeaders});
+  }
+
 //------------------ DOCTOR --------------------//
 
   //Doctor open booking page
-  drOpenBookingPage(){
-    return this.http.get(clinicDB);
+  drOpenBookingPage(): Observable<any>{
+    return this.http.get(clinicDB + '/booking/', {headers:this.httpHeaders});
   }
 
   //Doctor open a patient booking from list
-  drOpenPatientBookin(id){
-    return this.http.get(`${clinicDB}/${id}`);
+  drOpenPatientBooking(id){
+    return this.http.get(clinicDB + '/booking/' + id + '/', {headers:this.httpHeaders});
   }
 
   //Doctor update a booking status

@@ -1,1 +1,19 @@
-<p>drbooking works!</p>
+<div class="booking-content">
+    <table class="inbox-table">
+        <tr class="inbox-message-1">
+            <td class="inbox-sender">PATIENT NAME</td>
+            <td class="inbox-subject">COMPLAINTS</td>
+            <td>DATE</td>
+            <td>TIME</td>
+            <td>DETAILS</td>
+        </tr>
+        <tr *ngFor="let booking of bookings" class="inbox-message-2">
+            <td class="inbox-sender">{{booking.pid}}</td>
+            <td class="inbox-subject">{{booking.complaints}}</td>
+            <td>{{booking.btstamp | date : "MM.dd.yyyy"}}</td>
+            <td>{{booking.btstamp | date : "h:ss a"}}</td>
+            <td><input type="button" (click)="openBooking(booking)" value="Info"></td>
+        </tr>
+    </table>
+</div>
+

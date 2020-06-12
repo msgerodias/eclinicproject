@@ -2,12 +2,16 @@
     <h1>BOOK ONLINE CONSULTATION</h1>
     <form>
         <div class="inner-wrap">
-            <label>Choose your Physician<input type="text" name="field1" /></label>
-            <label>Chief Complaints <textarea name="field2" class="cons-inp"></textarea></label>
-            <label>Other Medical Problems <textarea name="field2" class="cons-inp"></textarea></label>
+            <label>Choose Physician
+                <select [(ngModel)]="booking.did" name="did">
+                    <option *ngFor="let doctor of doctors" value="{{doctor.id}}">DR. {{doctor.dfname}} {{doctor.dmname}} {{doctor.dlname}}</option>
+                </select>
+            </label>
+            <label>Chief Complaints <textarea [(ngModel)]="booking.complaints" name="complaints" class="cons-inp"></textarea></label>
+            <label>Other Medical Problems <textarea [(ngModel)]="booking.remarks" name="remarks" class="cons-inp"></textarea></label>
         </div>
         <div class="button-section">
-         <input type="submit" name="SEND" />
+         <input type="button" (click)="createBooking()" value="SUBMIT   "/>
         </div>
     </form>
   </div>

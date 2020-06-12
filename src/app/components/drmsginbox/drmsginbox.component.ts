@@ -12,4 +12,8 @@ export class DrmsginboxComponent implements OnInit {
   ngOnInit() {
   }
 
+  openMessage  = () => {
+    
+  }
+
 }

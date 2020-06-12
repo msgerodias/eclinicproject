@@ -1,0 +1,35 @@
+.inbox-table{
+    width:100%;
+}
+.inbox-message-1{
+    background-color:antiquewhite;
+    height: 40px;
+    border: none;
+}
+.inbox-message-2{
+    background-color:whitesmoke;
+    height: 40px;
+    border: none;
+}
+.inbox-sender{
+    padding: 1%;
+    font-family: sans-serif;
+    font-size: 20px;
+    width: 30%;
+    border: none;
+}
+.inbox-subject{
+    border: none;
+    padding: 1%;
+    font-family: sans-serif;
+    font-size: 20px;
+    width: 60%;
+}
+.inbox-time{
+    text-align: right;
+    border: none;
+    padding: 1%;
+    font-family: sans-serif;
+    font-size: 20px;
+    width: 60%;
+}
